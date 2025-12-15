@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Analysis Result</h1>
+
+        <p><b>Original Text:</b> {{ text }}</p>
+        <p><b>Cleaned Text:</b> {{ cleaned }}</p>
+        <p><b>Sentiment:</b> {{ sentiment }}</p>
+
+        <h3>Statistics</h3>
+        <p>Word Count: {{ word_count }}</p>
+        <p>Character Count: {{ char_count }}</p>
+
+        <h3>Most Common Words</h3>
+        <ul>
+            {% for w, f in word_freq %}
+                <li>{{ w }} : {{ f }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">Analyze Another</a>
+    </div>
+</body>
+</html>
